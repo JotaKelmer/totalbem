@@ -64,6 +64,11 @@ body {
     text-align: center;
 }
 
+.btn-cta a {
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
 .btn-cta:hover,
 .btn-cta:focus {
     background-color: var(--cor-hover);
