@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totalbem - Benefícios Corporativos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="/assets/img/logo.png" alt="Totalbem Logo">
+    </div>
+    <div class="contact">
+      <a href="tel:+5532991977779">Ligue para (32) 99197-7779</a>
+      <a href="mailto:atendimento@totalbem.com.br">Fale conosco</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <h1>Transforme o futuro da sua empresa</h1>
+        <p>Oferecemos soluções inovadoras de benefícios corporativos para sua empresa alcançar a máxima produtividade</p>
+        <form id="formulario" class="formulario" action="process_form.php" method="POST" aria-label="Formulário de Solicitação de Catálogo">
+          <input type="text" name="nome" placeholder="Seu Nome" required aria-required="true">
+          <input type="email" name="email" placeholder="Seu E-mail" required aria-required="true">
+          <input type="text" name="cargo" placeholder="Seu Cargo" required aria-required="true">
+          
+          <!-- Campo de telefone opcional -->
+          <input type="tel" name="telefone" placeholder="Seu Telefone (opcional)">
+      
+          <label for="regiao" class="visually-hidden">Quantos funcionários tem a sua empresa?</label>
+          <select name="regiao" id="regiao" required aria-required="true">
+              <option value="">Selecione</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-100">51-100</option>
+              <option value="mais-100">+ de 100</option>
+          </select>
+          
+          <button type="submit" class="btn-cta">Solicitar Benefício</button>
+          <div id="mensagem" class="mensagem"></div> <!-- Elemento para mensagens -->
+        </form>
+      </div>
+      <div class="hero-image">
+        <img src="/assets/img/hero.png" alt="Conte com os benefícios da Totalbem">
+      </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="beneficios" id="beneficios">
+      <h2>Nossos Produtos</h2>
+      <div class="beneficios-lista">
+        <div class="beneficio-item">
+          <img src="/assets/img/telemedicina.png" alt="Telemedicina">
+          <h3>Telemedicina</h3>
+          <p>Atendimento médico 24/7 para garantir a saúde contínua dos seus colaboradores.</p>
+        </div>
+        <div class="beneficio-item">
+          <img src="/assets/img/abono-salarial.png" alt="Antecipação Salarial">
+          <h3>Antecipação Salarial</h3>
+          <p>Adiantamento de até 40% do salário, sem custos adicionais para sua empresa.</p>
+        </div>
+        <div class="beneficio-item">
+          <img src="/assets/img/beneficios.png" alt="Cartão Multibenefícios">
+          <h3>Cartão Multibenefícios</h3>
+          <p>Até 9 benefícios em um único cartão aceito em todo o país.</p>
+        </div>
+        <div class="beneficio-item">
+          <img src="/assets/img/Vale-transporte.png" alt="Gestão de VT">
+          <h3>Gestão de VT</h3>
+          <p>Gestão eficiente de transporte com otimização de rotas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes -->
+    <section class="clients" id="clientes">
+      <div class="clients-content">
+        <h2>Nossos Clientes</h2>
+        <p>Empresas líderes confiam na Totalbem para oferecer benefícios que transformam a experiência dos colaboradores e melhoram a produtividade. Veja algumas das empresas que já fazem parte dessa transformação.</p>
+      </div>
+      <div class="clients-logos">
+        <div class="logo-item">
+          <img src="/assets/img/clientes/escoltech_vermelho.webp" alt="Escoltech">
+        </div>
+        <div class="logo-item">
+          <img src="/assets/img/clientes/invictus.svg" alt="Invictus">
+        </div>
+        <div class="logo-item">
+          <img src="/assets/img/clientes/eva-negativo_1-1.webp" alt="Eva">
+        </div>
+        <div class="logo-item">
+          <img src="/assets/img/clientes/logo-cedplan-saude.svg" alt="CedPlan">
+        </div>
+        <div class="logo-item">
+          <img src="/assets/img/clientes/Star-toys-sem-fundo.png" alt="Star Toys">
+        </div>
+        <div class="logo-item">
+          <img src="/assets/img/clientes/Torp-Nova-Logo.webp" alt="Torp">
+        </div>
+      </div>
+    </section>
+
+    <!-- Convencimento -->
+    <section class="convencimento" id="convencimento">
+      <div class="convencimento-image">
+        <img src="/assets/img/Hero-2.png" alt="Conte com os benefícios da Totalbem">
+      </div>
+      <div class="convencimento-content">
+        <h3>Impacto Positivo para <strong>Sua <span class="highlight">Empresa</span></strong></h3>
+        <p>Escolher a Totalbem é optar por um parceiro que entende as necessidades da sua empresa e está comprometido com o seu sucesso a longo prazo.</p>
+        <article class="depoimento">
+          <ul>
+            <li>Melhoria da qualidade de vida dos colaboradores</li>
+            <li>Otimização de processos internos</li>
+            <li>Redução de custos operacionais</li>
+            <li>Retenção de talentos</li>
+            <li>Crescimento sustentável</li>
+          </ul>
+        </article>
+        <button type="button" class="btn-cta">Solicitar Benefício</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Totalbem. Todos os direitos reservados.</p>
+    </div>
+    <div class="footer-info">
+      <p>Desenvolvido por 
+        <a href="https://emktplace.com.br/">
+          <img src="/assets/img/emkt e reme.png" alt="eMKT e Reme">
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Script AJAX para Processar o Formulário -->
+  <script>
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+      e.preventDefault(); // Evita o envio padrão do formulário
+
+      const formData = new FormData(this);
+      const mensagemDiv = document.getElementById('mensagem');
+
+      // Limpa mensagens anteriores
+      mensagemDiv.innerHTML = '';
+      mensagemDiv.classList.remove('sucesso', 'erro');
+      mensagemDiv.style.display = 'none';
+
+      fetch('process_form.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        mensagemDiv.innerHTML = data;
+
+        // Adiciona a classe 'sucesso' ou 'erro' com base no conteúdo retornado
+        if (data.includes('sucesso')) {
+          mensagemDiv.classList.add('sucesso');
+        } else {
+          mensagemDiv.classList.add('erro');
+        }
+
+        mensagemDiv.style.display = 'block';
+
+        if (mensagemDiv.classList.contains('sucesso')) {
+          this.reset(); // Limpa o formulário em caso de sucesso
+        }
+      })
+      .catch(error => {
+        mensagemDiv.innerHTML = "<p>Desculpe, houve um erro ao enviar sua solicitação.</p>";
+        mensagemDiv.classList.add('erro');
+        mensagemDiv.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+
+</html>

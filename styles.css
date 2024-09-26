@@ -1,0 +1,592 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-primaria);
+    padding: 0 15px; /* Margem para desktop */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Variáveis de Cores */
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #5bc092;
+    --cor-texto: #ffffff;
+    --cor-acento: #ddd;
+    --cor-hover: #1e90ff; /* Azul mais vivo para hover */
+    --cor-hover-texto: #ffffff;
+    --cor-borda: #ddd;
+    --cor-background-hover: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente para menu mobile */
+    --cor-highlight: #5bc092; /* Verde para destaque */
+}
+
+/* Utilitários */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Destaque */
+.highlight {
+    color: var(--cor-highlight); /* Aplica o verde definido */
+}
+
+/* Botões CTA */
+.btn-cta {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+    background-color: var(--cor-hover);
+    color: var(--cor-hover-texto);
+    transform: scale(1.05); /* Leve aumento de escala no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+/* Header */
+header {
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    max-width: 180px; /* Aumento do tamanho da logo */
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Seções Principais */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero,
+.convencimento {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-primaria);
+    flex-wrap: wrap;
+    padding: 3rem;
+    gap: 2rem; /* Espaço entre os elementos */
+}
+
+.hero-content,
+.convencimento-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-image,
+.convencimento-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img,
+.convencimento-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover,
+.convencimento-image img:hover {
+    transform: scale(1.05); /* Efeito de zoom suave na imagem ao passar o mouse */
+}
+
+.hero-content h1,
+.convencimento-content h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+.hero-content h1 {
+    font-size: 2.7rem;
+}
+
+.convencimento-content h3 {
+    font-size: 1.7rem;
+}
+
+.hero-content p,
+.convencimento-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: var(--cor-acento);
+}
+
+.depoimento ul {
+    list-style: none; /* Remove os marcadores */
+    padding-left: 0; /* Remove o padding padrão */
+    margin-bottom: 1.5rem; /* Espaço entre a lista e o botão */
+}
+
+.depoimento ul li {
+    margin-bottom: 0.5rem; /* Espaçamento entre os itens */
+    position: relative;
+    padding-left: 0.5em; /* Espaço para um marcador personalizado */
+}
+
+.depoimento ul li::before {
+    content: '•'; /* Adiciona um marcador personalizado */
+    color: var(--cor-secundaria); /* Cor do marcador */
+    position: absolute;
+    left: 0;
+}
+
+/* Formulário */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulario input,
+.formulario select,
+.formulario button {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    color: var(--cor-texto);
+    transition: border-color 0.3s ease;
+    width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+}
+
+.formulario input::placeholder,
+.formulario select::placeholder {
+    color: var(--cor-acento);
+}
+
+.formulario input:focus,
+.formulario select:focus {
+    border-color: var(--cor-hover);
+}
+
+/* Estilização do Select para Melhor Visibilidade */
+.formulario select {
+    background-color: var(--cor-secundaria); /* Fundo escuro */
+    color: var(--cor-texto); /* Texto branco */
+    appearance: none; /* Remove a seta padrão */
+    padding-right: 2rem; /* Espaço para a seta customizada */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23ffffff" d="M6 8L0 0h12L6 8z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px 8px;
+}
+
+/* Benefícios */
+.beneficios {
+    padding: 4rem 2rem;
+    background-color: #252629;
+    text-align: center;
+}
+
+.beneficios h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--cor-texto);
+}
+
+.beneficios-lista {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.beneficio-item {
+    text-align: center;
+    max-width: 300px;
+    transition: transform 0.2s ease;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px); /* Efeito de movimento ao passar o mouse */
+}
+
+.beneficio-item img {
+    width: 200px;
+    margin-bottom: 1rem;
+}
+
+.beneficio-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+.beneficio-item p {
+    color: var(--cor-acento);
+}
+
+/* Clientes */
+.clients {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 40px;
+    background-color: var(--cor-hover-texto);
+    color: var(--cor-primaria);
+    flex-wrap: wrap;
+}
+
+.clients-content {
+    max-width: 40%;
+    margin-right: 30px;
+}
+
+.clients-content h2 {
+    font-size: 2.5rem;
+    color: var(--cor-primaria); /* Segue o padrão de cores */
+    margin-bottom: 20px;
+}
+
+.clients-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    max-width: 55%;
+}
+
+.logo-item {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Footer */
+footer {
+    background-color: var(--cor-primaria); /* Cor de fundo */
+    color: var(--cor-texto); /* Cor do texto */
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column; /* Alinha verticalmente para ambos */
+    align-items: center; /* Centraliza o conteúdo */
+    text-align: center;
+}
+
+.footer-content,
+.footer-info {
+    margin-bottom: 1rem; /* Espaçamento entre as seções */
+}
+
+.footer-content p,
+.footer-info p {
+    font-size: 1rem;
+    margin: 0; /* Remove margens extras */
+    color: var(--cor-texto);
+}
+
+.footer-info p {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza texto e imagem verticalmente */
+}
+
+.footer-info a {
+    display: inline-flex; /* Mantém imagem e texto alinhados */
+    align-items: center; /* Alinha a imagem com o texto */
+}
+
+.footer-info a img {
+    width: 180px; /* Aumento do tamanho da logo no footer */
+    height: auto;
+    margin-left: 10px; /* Espaçamento entre o texto e a imagem */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.footer-info a img:hover {
+    transform: scale(1.1); /* Efeito de zoom no hover */
+}
+
+/* Mensagens de Sucesso e Erro */
+.mensagem {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    display: none;
+    font-size: 1rem;
+}
+
+.mensagem.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.mensagem.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* Remoção de Lista de Marcadores */
+.depoimento ul {
+    list-style: none; /* Remove os marcadores */
+    padding-left: 0; /* Remove o padding padrão */
+    margin-bottom: 1.5rem; /* Espaço entre a lista e o botão */
+}
+
+.depoimento ul li {
+    margin-bottom: 0.5rem; /* Espaçamento entre os itens */
+    position: relative;
+    padding-left: 0.5em; /* Espaço para um marcador personalizado */
+}
+
+.depoimento ul li::before {
+    content: '•'; /* Adiciona um marcador personalizado */
+    color: var(--cor-secundaria); /* Cor do marcador */
+    position: absolute;
+    left: 0;
+}
+
+/* Responsividade */
+
+/* Mobile First Approach */
+
+/* Até 480px */
+@media (max-width: 480px) {
+    .hero-content h1,
+    .convencimento-content h3 {
+        font-size: 2rem;
+    }
+
+    .hero-content p,
+    .convencimento-content p,
+    .beneficios,
+    .clients-content {
+        font-size: 1rem;
+    }
+
+    .btn-cta {
+        width: 100%;
+        text-align: center;
+    }
+
+    .beneficios-lista {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .beneficio-item img {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* Remove espaçamento extra na seção convencimento */
+    .convencimento {
+        gap: 1.5rem;
+    }
+}
+
+/* Até 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px;
+    }
+
+    header {
+        flex-direction: row; /* Mantém em uma linha */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo img {
+        max-width: 120px; /* Redução do tamanho da logo no mobile */
+    }
+
+    .contact {
+        flex-direction: row;
+        flex-wrap: nowrap; /* Previne quebra de linha */
+        gap: 10px;
+    }
+
+    .contact a {
+        font-size: 0.8rem; /* Redução do tamanho da fonte */
+    }
+
+    .hero,
+    .convencimento {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        align-items: center; /* Centraliza horizontalmente */
+        text-align: center; /* Centraliza o texto */
+        gap: 1.5rem;
+    }
+
+    .hero-content,
+    .convencimento-content {
+        max-width: 100%;
+        margin-bottom: 1.5rem; /* Espaço entre conteúdo e imagem */
+        padding-left: 0;
+    }
+
+    .hero-image,
+    .convencimento-image {
+        justify-content: center;
+        margin-top: 1.5rem;
+        padding-left: 0;
+    }
+
+    .beneficios-lista {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .beneficio-item {
+        max-width: 100%; /* Garante que os itens ocupem toda a largura */
+    }
+
+    .clients {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .clients-content {
+        max-width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .clients-logos {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .logo-item {
+        width: 45%;
+    }
+
+    .btn-cta {
+        padding: 0.5rem 1rem; /* Ajuste no padding para caber melhor */
+    }
+}
+
+/* Até 1024px */
+@media (max-width: 1024px) {
+    .clients {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    .clients-content {
+        max-width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .clients-logos {
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .logo-item {
+        width: 45%;
+    }
+}
+
+/* Até 1200px */
+@media (max-width: 1200px) {
+    .hero,
+    .convencimento {
+        padding: 2rem;
+    }
+
+    .beneficios-lista {
+        gap: 1rem;
+    }
+
+    .beneficio-item img {
+        width: 200px;
+    }
+}
+
+/* Acima de 720px */
+@media (min-width: 720px) {
+    .hero-image,
+    .convencimento-image {
+        padding-left: 2em;
+    }
+}
+
+/* Acima de 768px */
+@media (min-width: 768px) {
+    .hero-content,
+    .convencimento-content {
+        margin-bottom: 3em;
+    }
+}
